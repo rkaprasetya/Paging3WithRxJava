@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:padding="@dimen/default_padding_margin_xh">
+  <ImageView
+    android:id="@+id/image_profile"
+    android:layout_width="@dimen/image_size"
+    android:layout_height="@dimen/image_size"
+    android:src="@drawable/ic_error"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:ignore="ContentDescription" />
+  <TextView
+    android:id="@+id/text_name"
+    style="@style/Text.Title"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_margin"
+    android:layout_marginTop="@dimen/default_padding_margin"
+    app:layout_constraintStart_toEndOf="@+id/image_profile"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="John" />
+  <TextView
+    android:id="@+id/text_description"
+    style="@style/Text"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_margin"
+    android:layout_marginTop="@dimen/default_padding_margin_h"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/image_profile"
+    app:layout_constraintTop_toBottomOf="@+id/text_name"
+    tools:text="I can help you learn" />
+  <TextView
+    android:id="@+id/text_reference_counter"
+    style="@style/Text.Number"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_padding_margin"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:text="5" />
+  <TextView
+    android:id="@+id/text_reference_new"
+    style="@style/Text.Label"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/default_padding_margin"
+    android:text="@string/new_caption"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+  <TextView
+    android:id="@+id/text_native_title"
+    style="@style/Text.Category"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_margin"
+    android:layout_marginBottom="@dimen/default_padding_margin"
+    android:text="@string/native_caption"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/image_profile" />
+  <TextView
+    android:id="@+id/text_native_value"
+    style="@style/Text.Item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_margin"
+    android:layout_marginBottom="@dimen/default_padding_margin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/text_native_title"
+    tools:text="ES EN DE" />
+  <TextView
+    android:id="@+id/text_learns_title"
+    style="@style/Text.Category"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_margin_xh"
+    android:layout_marginBottom="@dimen/default_padding_margin"
+    android:text="@string/learns_caption"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/text_native_value" />
+  <TextView
+    android:id="@+id/text_learns_value"
+    style="@style/Text.Item"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/default_padding_margin"
+    android:layout_marginBottom="@dimen/default_padding_margin"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toEndOf="@+id/text_learns_title"
+    tools:text="ES EN DE" />
+</androidx.constraintlayout.widget.ConstraintLayout>

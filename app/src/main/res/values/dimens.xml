@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="image_size">100dp</dimen>
+  <dimen name="default_padding_margin_h">12dp</dimen>
+  <dimen name="default_padding_margin_xh">20dp</dimen>
+  <dimen name="default_padding_margin">8dp</dimen>
+  <dimen name="text_size_medium">12sp</dimen>
+  <dimen name="text_size_big">18sp</dimen>
+  <dimen name="default_padding_margin_small_x">2dp</dimen>
+</resources>
