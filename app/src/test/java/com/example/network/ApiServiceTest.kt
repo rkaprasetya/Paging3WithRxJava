@@ -30,6 +30,7 @@ class ApiServiceTest {
     val instantExecutorRule = InstantTaskExecutorRule()
     private lateinit var SUT: ApiService
     private lateinit var mockWebSerVer: MockWebServer
+
     @Before
     fun createService() {
         mockWebSerVer = MockWebServer()
@@ -75,7 +76,7 @@ class ApiServiceTest {
             //arrange
             setResponseSuccess("api_community_response.json")
             //act
-            val resultResponse = SUT.getCommunity(1)
+            val resultResponse = SUT.getCommunity(1).blockingGet()
             val dataResponse = resultResponse.response
             //assert
             assertThat(20,`is`(dataResponse?.size))
@@ -87,7 +88,7 @@ class ApiServiceTest {
             //arrange
             setResponseSuccess("api_community_response.json")
             //act
-            val resultResponse = SUT.getCommunity(1)
+            val resultResponse = SUT.getCommunity(1).blockingGet()
             val dataResponse = resultResponse.response
             //assert
             assertThat("Tobi",`is`(dataResponse!![0]!!.firstName))

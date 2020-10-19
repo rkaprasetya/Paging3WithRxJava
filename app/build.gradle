@@ -69,6 +69,7 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$rootProject.hiltLifecycle"
     //paging 3
     implementation "androidx.paging:paging-runtime:$rootProject.paging"
+    implementation "androidx.paging:paging-rxjava2:$rootProject.paging"
     //coil
     implementation "io.coil-kt:coil:$rootProject.coil"
     testImplementation 'junit:junit:4.13'

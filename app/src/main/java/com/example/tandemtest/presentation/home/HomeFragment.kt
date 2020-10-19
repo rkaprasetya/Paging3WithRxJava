@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.observe
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +15,7 @@ import com.example.tandemtest.R
 import com.example.tandemtest.presentation.home.adapter.HomeAdapter
 import com.example.tandemtest.presentation.home.adapter.HomeLoadStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 @AndroidEntryPoint
@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
     private val viewModel by viewModels<HomeViewModel>()
     private lateinit var homeAdapter: HomeAdapter
     private lateinit var recyclerView: RecyclerView
-
+    private val disposable = CompositeDisposable()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -63,8 +63,13 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupObserver() {
-        viewModel.getProfiles().observe(viewLifecycleOwner) {
+        disposable.add(viewModel.getProfiles().subscribe {
             homeAdapter.submitData(viewLifecycleOwner.lifecycle, it)
-        }
+        })
+    }
+
+    override fun onDestroy() {
+        disposable.clear()
+        super.onDestroy()
     }
 }
